@@ -808,8 +808,8 @@ static int x_initialise(nsfb_t *nsfb)
 
     if (xstate->image == NULL) {
         fprintf(stderr, "Unable to create image\n");
-        free(xstate);
         xcb_disconnect(xstate->connection);
+        free(xstate);
         return -1;
     }
 
